@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Dog Collector</title>
+</head>
+<body>
+    <header class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper indigo">
+                <ul>
+                    <li>
+                        <a href="{% url 'home' %}" class="left brand-logo">DogCollector</a>
+                    </li>
+                </ul>
+                <ul class="right">
+                    <li>
+                        <a href="{% url 'about' %}">About</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'dogs_index' %}">View All My Dogs</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="container">
+        {% block content %}
+    
+        {% endblock %}
+    </main>
+       
+          
+    <footer class="page-footer indigo">
+        <div class="right">All Rights Reserved &copy; <span id="year"></span> Dog Collector</div>
+    </footer>
+    <script>
+        const spanEl = document.getElementById('year');
+        spanEl.innerText = new Date().getFullYear();
+    </script>
+</body>
+</html>
