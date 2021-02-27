@@ -79,7 +79,7 @@ class DogDelete(LoginRequiredMixin, DeleteView):
 class ToyList(LoginRequiredMixin, ListView):
     model = Toy
 
-class ToyCreate(LoginRequiredMixin, ListView):
+class ToyCreate(LoginRequiredMixin, CreateView):
     model = Toy
     fields = '__all__'
 
